@@ -12,14 +12,17 @@ def _next_day():
 
 
 def update_readme(day):
-    with open("README.md", "a") as f:
-        lines = [
+    with open("README.md", "r+") as f:
+        new_day_lines = [
             f"<h2>Day {day}</h2>\n",
             "\n",
             f"- [Prompt](https://adventofcode.com/2023/day/{day})\n",
             f"- [Solution](./{day}/solution.py)\n",
             "\n"
         ]
+        lines = f.readlines()
+        lines = lines[:3] + new_day_lines + lines[3:]
+        f.seek(0)
         f.writelines(lines)
 
 

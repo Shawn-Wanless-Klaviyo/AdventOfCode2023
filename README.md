@@ -5,4 +5,3 @@ My solutions for AoC '23
 
 - [Prompt](https://adventofcode.com/2023/day/1)
 - [Solution](./1/solution.py)
-
