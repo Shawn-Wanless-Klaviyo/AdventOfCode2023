@@ -4,7 +4,7 @@ def part1(input_file):
     for row in range(len(schematic)):
         curr_num = ""
         is_engine_part = False
-        for col in range(len(schematic)):
+        for col in range(len(schematic[row])):
             char = schematic[row][col]
             if char.isnumeric():
                 curr_num += char
@@ -20,7 +20,7 @@ def part1(input_file):
 
 def _safe_index(schematic, row, col):
     if (row < 0 or col < 0 or
-            row >= len(schematic) or col >= len(schematic[0])):
+            row >= len(schematic) or col >= len(schematic[row])):
         return "."
     else:
         return schematic[row][col]
@@ -53,7 +53,7 @@ def part2(input_file):
         curr_num = ""
         is_engine_part = False
         star_coords = None
-        for col in range(len(schematic)):
+        for col in range(len(schematic[row])):
             char = schematic[row][col]
             if char.isnumeric():
                 curr_num += char
