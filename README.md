@@ -1,6 +1,11 @@
 # Advent Of Code 2023
 My solutions for AoC '23
 
+<h2>Day 7</h2>
+
+- [Prompt](https://adventofcode.com/2023/day/7)
+- [Solution](./7/solution.py)
+
 <h2>Day 6</h2>
 
 - [Prompt](https://adventofcode.com/2023/day/6)
