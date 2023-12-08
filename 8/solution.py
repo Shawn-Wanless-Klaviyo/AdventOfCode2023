@@ -34,10 +34,10 @@ def part2(input_file):
         if node[-1] == "A":
             ends_in_A.append(node)
 
-    # Assumption 1: each A-ending node has exactly one Z-ending node in its cycle
-    #   True, found by checking number of unique Z-endings in each cycle
-    # Assumption 2: (after noticing pattern in cycle offsets and cycle length)
-    #   Each cycle starts exactly len(cycle) steps in the instructions (perfect cycles)
+    # Constraint 1: each A-ending node has exactly one Z-ending node in its cycle
+    #   Discovered by checking number of unique Z-endings in each cycle
+    # Constraint 2: Each cycle starts exactly len(cycle) steps into the instructions
+    #   Discovered after noticing pattern in cycle offsets and cycle length
     cycle_offsets = {}
     current_nodes = ends_in_A[:]
     steps = 0
@@ -47,9 +47,8 @@ def part2(input_file):
             next_nodes = []
             for index, node in enumerate(current_nodes):
                 next_node = mapping[node][instruction]
-                if next_node[-1] == "Z":
-                    if index not in cycle_offsets:
-                        cycle_offsets[index] = steps
+                if next_node[-1] == "Z" and index not in cycle_offsets:
+                    cycle_offsets[index] = steps
                 next_nodes.append(next_node)
             current_nodes = next_nodes
     cycle_lengths = [offset for _, offset in cycle_offsets.items()]
