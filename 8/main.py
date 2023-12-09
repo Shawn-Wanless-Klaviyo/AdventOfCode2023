@@ -11,8 +11,4 @@ if __name__ == '__main__':
     if PART2:
         with open("input.txt") as inputFile:
             print("\nPart 2:")
-            import time;
-            start = time.perf_counter()
             print(part2(inputFile))
-            stop = time.perf_counter()
-            print(f"Ran in {stop - start} seconds")
