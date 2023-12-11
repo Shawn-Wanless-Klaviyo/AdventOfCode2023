@@ -37,8 +37,7 @@ def _manhattan_dist(coordA, coordB, empty_rows, empty_cols, empty_length):
     row_dist = abs(coordA[0] - coordB[0])
     col_dist = abs(coordA[1] - coordB[1])
     for empty_row in empty_rows:
-        if (coordA[0] < empty_row < coordB[0] or
-                coordA[0] > empty_row > coordB[0]):
+        if coordA[0] < empty_row < coordB[0]:
             row_dist += empty_length - 1
     for empty_col in empty_cols:
         if (coordA[1] < empty_col < coordB[1] or
